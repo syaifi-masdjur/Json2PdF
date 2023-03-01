@@ -1,12 +1,60 @@
-﻿<Window x:Class="Json2PdF.Window.MainWindow"
+﻿<Controls:MetroWindow  xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Json2PdF.Window.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Json2PdF.Window"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
-</Window>
+        Title="PDF Editor" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="Open..." />
+                <MenuItem Header="Close" />
+                <MenuItem Header="Save" />
+                <MenuItem Header="Save As..." />
+                <MenuItem Header="Close" />
+                <MenuItem Header="Exit" ></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="Copy" />
+                <MenuItem Header="Paste" />
+            </MenuItem>
+            <MenuItem Header="About">
+                <MenuItem Header="About" />
+            </MenuItem>
+        </Menu>
+        <ToolBarPanel DockPanel.Dock="Top">
+            <ToolBar>
+                <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
+                <Button>Open</Button>
+                <Button>Save</Button>
+                <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
+                <ComboBox Name="FontName"></ComboBox>
+                <ComboBox Name="FontSize"></ComboBox>
+                <ComboBox Name="FontStyle"></ComboBox>
+                <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
+                <Button>Bold</Button>
+                <Button>Italic</Button>
+                <Button>Underline</Button>
+                <Button>Strike</Button>
+            </ToolBar>
+            <TextBlock>This is for toolbar</TextBlock>
+        </ToolBarPanel>
+        <DockPanel DockPanel.Dock="Bottom" LastChildFill="True">
+            <StatusBar DockPanel.Dock="Left" HorizontalAlignment="Left">
+                <StatusBarItem>
+                    <TextBlock>Help 1</TextBlock>
+                </StatusBarItem>
+            </StatusBar>
+            <StatusBar>
+                <StatusBarItem >
+                    <TextBlock>Information</TextBlock>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
+        <StackPanel Background="Red" >
+            <TextBlock>test</TextBlock>
+        </StackPanel>
+    </DockPanel>
+</Controls:MetroWindow>
