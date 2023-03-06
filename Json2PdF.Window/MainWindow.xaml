@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:Json2PdF.Window"
     xmlns:mv="clr-namespace:Json2PdF.Window.ViewModels"
+    xmlns:vw ="clr-namespace:Json2PdF.Window.Views"
     mc:Ignorable="d"
     Title="PDF Editor" Height="450" Width="800">
     <DockPanel LastChildFill="True">
@@ -33,10 +34,12 @@
                 <Button>Open</Button>
                 <Button>Save</Button>
                 <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
-                <ComboBox Name="cboFontName" ItemsSource="{Binding Fonts, Mode=TwoWay}"  SelectedValuePath="Name" DisplayMemberPath="Name" SelectedIndex="0">
+                <ComboBox Name="cboFontName" ItemsSource="{Binding Fonts, Mode=TwoWay}"  
+                          SelectedValuePath="Name" DisplayMemberPath="Name" SelectedIndex="0">
                 </ComboBox>
-                <ComboBox Name="FontSize" ItemsSource="{Binding FontSize, Mode=TwoWay}"></ComboBox>
-                <ComboBox Name="FontStyle" ItemsSource="{Binding FontStyles, Mode=TwoWay}" SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0"></ComboBox>
+                <ComboBox Name="FontSize" ItemsSource="{Binding FontSize, Mode=TwoWay}" SelectedIndex="0"></ComboBox>
+                <ComboBox Name="FontStyle" ItemsSource="{Binding FontStyles, Mode=TwoWay}" 
+                          SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0"></ComboBox>
                 <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
                 <Button>Bold</Button>
                 <Button>Italic</Button>
@@ -56,8 +59,10 @@
                 </StatusBarItem>
             </StatusBar>
         </DockPanel>
-        <StackPanel Background="Red" >
-            <TextBlock>test</TextBlock>
-        </StackPanel>
+        <DockPanel Background="LightGray" LastChildFill="True" >
+            <vw:RichTextView>
+                
+            </vw:RichTextView>
+        </DockPanel>
     </DockPanel>
 </Controls:MetroWindow>

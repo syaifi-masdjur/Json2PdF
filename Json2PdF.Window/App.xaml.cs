@@ -25,7 +25,7 @@ namespace Json2PdF.Window
         public App()
         {
             Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
-                .ConfigureServices((context, services) =>
+                .ConfigureServices((hostContext, services) =>
                 {
                     ConfigureServices(services);
                 })
