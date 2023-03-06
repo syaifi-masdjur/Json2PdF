@@ -8,19 +8,19 @@ using System.Threading.Tasks;
 
 namespace Json2PdF.Window.ViewModels
 {
-    public class RichTextViewModel
+    public class RichTextViewModel: BaseViewModel
     {
         public RichTextViewModel()
         {
 
         }
 
-        private FontFamily _activeFont;
+        private FontFamily _activeFontFamily;
 
-        public FontFamily ActiveFont
+        public FontFamily ActiveFontFamily
         {
-            get { return _activeFont; }
-            set { _activeFont = value; }
+            get { return _activeFontFamily; }
+            set { _activeFontFamily = value; }
         }
 
         private int _activeFontStyle;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Windows.Documents;
 
 namespace Json2PdF.Window.ViewModels
 {
-    public class MainViewModel
+    public class MainViewModel: BaseViewModel
     {
 
         public MainViewModel()
@@ -55,7 +56,9 @@ namespace Json2PdF.Window.ViewModels
         public FontFamily? SelectedFont
         {
             get { return _selectedFont; }
-            set { _selectedFont = value; }
+            set { _selectedFont = value;
+                OnPropertyChanged("SelectedFont");
+            }
         }
 
 
@@ -71,7 +74,7 @@ namespace Json2PdF.Window.ViewModels
         private Dictionary<int, string> _fontStyle;
         public Dictionary<int, string> FontStyles
         {
-            get { return _fontStyle; }
+           get { return _fontStyle; }
             set { _fontStyle = value; }
         }
 
@@ -80,7 +83,10 @@ namespace Json2PdF.Window.ViewModels
         public KeyValuePair<int, string> SelectedFontStyle
         {
             get { return _selectedFontStyle; }
-            set { _selectedFontStyle = value; }
+            set { 
+                _selectedFontStyle = value;
+                OnPropertyChanged("SelectedFontStyle");
+            }
         }
 
 
@@ -108,9 +114,10 @@ namespace Json2PdF.Window.ViewModels
         public IList<int> FontSize
         {
             get { return _fontSize; }
-            set { _fontSize = value; }
+            set { 
+                _fontSize = value;
+                OnPropertyChanged("FontSize");
+            }
         }
-
-
     }
 }
