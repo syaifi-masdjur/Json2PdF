@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json2PdF.Window", "Json2PdF.Window\Json2PdF.Window.csproj", "{E2225F6B-DF20-446B-8EB7-7D6A01E0B4F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Json2PdF.Window", "Json2PdF.Window\Json2PdF.Window.csproj", "{E2225F6B-DF20-446B-8EB7-7D6A01E0B4F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Json2PDF.Web", "Json2PDF.Web\Json2PDF.Web.csproj", "{0E949AA4-F4D6-4F24-ABB9-5B2B15CDCA74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{E2225F6B-DF20-446B-8EB7-7D6A01E0B4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2225F6B-DF20-446B-8EB7-7D6A01E0B4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2225F6B-DF20-446B-8EB7-7D6A01E0B4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E949AA4-F4D6-4F24-ABB9-5B2B15CDCA74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E949AA4-F4D6-4F24-ABB9-5B2B15CDCA74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E949AA4-F4D6-4F24-ABB9-5B2B15CDCA74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E949AA4-F4D6-4F24-ABB9-5B2B15CDCA74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

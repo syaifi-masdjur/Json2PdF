@@ -7,7 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel>
-        <RichTextBox FontFamily="{Binding ActiveFontFamily, Mode=TwoWay}" FontSize="{Binding ActiveFontSize, Mode=TwoWay}" FontStyle="{Binding ActiveFontStyle, Mode=TwoWay}">
+        <RichTextBox>
+            <FlowDocument PageWidth="2048" FontFamily="{Binding ActiveFontFamily, Mode=TwoWay}"  FontSize="{Binding ActiveFontSize, Mode=TwoWay}" FontStyle="{Binding ActiveFontStyle, Mode=TwoWay}">
+                
+            </FlowDocument>
         </RichTextBox>
     </DockPanel>
 </UserControl>

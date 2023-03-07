@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
@@ -28,6 +29,10 @@ namespace Json2PdF.Window.ViewModels
             _selectedFontStyle = _fontStyle.First();
 
             initializeFontSize();
+            _editorVM = new RichTextViewModel();
+            _editorVM.ActiveFontFamily = _selectedFont;
+            _editorVM.ActiveFontSize = 12;
+            _editorVM.ActiveFontStyle = _selectedFontStyle;
         }
 
 
@@ -57,10 +62,10 @@ namespace Json2PdF.Window.ViewModels
         {
             get { return _selectedFont; }
             set { _selectedFont = value;
+                EditorVM.ActiveFontFamily = _selectedFont;
                 OnPropertyChanged("SelectedFont");
             }
         }
-
 
         private void initialStyle()
         {
@@ -75,7 +80,8 @@ namespace Json2PdF.Window.ViewModels
         public Dictionary<int, string> FontStyles
         {
            get { return _fontStyle; }
-            set { _fontStyle = value; }
+            set { _fontStyle = value;
+            }
         }
 
         private KeyValuePair<int,string> _selectedFontStyle;
@@ -85,10 +91,10 @@ namespace Json2PdF.Window.ViewModels
             get { return _selectedFontStyle; }
             set { 
                 _selectedFontStyle = value;
-                OnPropertyChanged("SelectedFontStyle");
+                EditorVM.ActiveFontStyle = _selectedFontStyle;
+                OnPropertyChanged("SelectedFont");
             }
         }
-
 
         private void initializeFontSize()
         {
@@ -119,5 +125,14 @@ namespace Json2PdF.Window.ViewModels
                 OnPropertyChanged("FontSize");
             }
         }
+
+        private RichTextViewModel _editorVM;
+
+        public RichTextViewModel EditorVM
+        {
+            get { return _editorVM; }
+            set { _editorVM = value; }
+        }
+
     }
 }

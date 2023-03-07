@@ -34,12 +34,12 @@
                 <Button>Open</Button>
                 <Button>Save</Button>
                 <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
-                <ComboBox Name="cboFontName" ItemsSource="{Binding Fonts, Mode=TwoWay}"  
+                <ComboBox Name="cboFontName" ItemsSource="{Binding Fonts, Mode=TwoWay}" SelectedItem="{Binding SelectedFont, Mode=TwoWay}"  
                           SelectedValuePath="Name" DisplayMemberPath="Name" SelectedIndex="0">
                 </ComboBox>
-                <ComboBox Name="FontSize" ItemsSource="{Binding FontSize, Mode=TwoWay}" SelectedIndex="0"></ComboBox>
+                <ComboBox Name="FontSize" ItemsSource="{Binding FontSize, Mode=TwoWay}" SelectedIndex="0" SelectedItem="{Binding FontSize, Mode=TwoWay}" ></ComboBox>
                 <ComboBox Name="FontStyle" ItemsSource="{Binding FontStyles, Mode=TwoWay}" 
-                          SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0"></ComboBox>
+                          SelectedValuePath="Key" DisplayMemberPath="Value" SelectedIndex="0" SelectedItem="{Binding SelectedFontStyle, Mode=TwoWay}"></ComboBox>
                 <RibbonQuickAccessToolBar></RibbonQuickAccessToolBar>
                 <Button>Bold</Button>
                 <Button>Italic</Button>
@@ -60,7 +60,7 @@
             </StatusBar>
         </DockPanel>
         <DockPanel Background="LightGray" LastChildFill="True" >
-            <vw:RichTextView>
+            <vw:RichTextView DataContext="{Binding EditorVM}">
                 
             </vw:RichTextView>
         </DockPanel>

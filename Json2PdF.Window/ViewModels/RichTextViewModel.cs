@@ -15,20 +15,24 @@ namespace Json2PdF.Window.ViewModels
 
         }
 
-        private FontFamily _activeFontFamily;
+        private FontFamily? _activeFontFamily;
 
-        public FontFamily ActiveFontFamily
+        public FontFamily? ActiveFontFamily
         {
             get { return _activeFontFamily; }
-            set { _activeFontFamily = value; }
+            set { _activeFontFamily = value; 
+                OnPropertyChanged("ActiveFontFamily");
+            }
         }
 
-        private int _activeFontStyle;
+        private KeyValuePair<int, string> _activeFontStyle;
 
-        public int ActiveFontStyle
+        public KeyValuePair<int,string> ActiveFontStyle
         {
             get { return _activeFontStyle; }
-            set { _activeFontStyle = value; }
+            set { _activeFontStyle = value; 
+                OnPropertyChanged("ActiveFontStyle");
+            }
         }
 
         private int _activeFontSize;
@@ -36,7 +40,9 @@ namespace Json2PdF.Window.ViewModels
         public int ActiveFontSize
         {
             get { return _activeFontSize; }
-            set { _activeFontSize = value; }
+            set { _activeFontSize = value; 
+                OnPropertyChanged("ActiveFontSize");
+            }
         }
 
 

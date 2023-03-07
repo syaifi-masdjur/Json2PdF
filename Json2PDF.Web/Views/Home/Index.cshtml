@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" id="PDFcontent">
+    </div>
+<div id=”ignoreContent“>
+
+    <p>Only for display and not in pdf</p>
+
+</div>
+<button id=”gpdf” onclick="generatePDF()">Generate PDF</button>
+
+@section Scripts{
+    <script>
+        let pdfdoc = new jsPDF();
+        let specialElementHandlers = {
+            '#ignoreContent': function (element, renderer) {
+                return true;
+            }
+        };
+
+        function generatePDF(){
+            alert('Exporting...');
+            pdfdoc.fromHTML($('.note-editable').html(), 10, 10, {
+                'width': 110,
+                'elementHandlers': specialElementHandlers
+            });
+            pdfdoc.save('Downloaded.pdf');
+        }
+
+        $(document).ready(function(){
+            $('#PDFcontent').summernote({
+                tabsize: 2,
+                'height': 500,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'codeview', 'help']]
+                ]
+            });
+        });
+    </script>
+}
