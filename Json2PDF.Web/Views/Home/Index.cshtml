@@ -262,6 +262,23 @@
                 $.post("/Home/Converted",{data:o}, function (result) {
                     //alert(result)
                     $('#PDFcontent').html(result)
+                    $('#PDFcontent').summernote({
+                        tabsize: 2,
+                        'height': 500,
+                        'styleTags': ['p', 'h1', 'h2', 'h3', 'small'],
+                        toolbar: [
+                            ['style', ['style']],
+                            ['font', ['strikethrough', 'superscript', 'subscript']],
+                            ['fontsize', ['fontsize']],
+                            ['fontname', ['fontname']],
+                            ['color', ['color']],
+                            ['para', ['ul', 'ol', 'paragraph']],
+                            ['table', ['table']],
+                            ['insert', ['link', 'picture', 'video']],
+                            ['height', ['height']],
+                            ['view', ['fullscreen', 'codeview', 'help']]
+                        ]
+                    })
                 });
                 return o;
             }catch(ex){

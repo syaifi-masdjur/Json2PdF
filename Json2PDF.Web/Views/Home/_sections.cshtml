@@ -1,18 +1,23 @@
 ﻿@model Components
-<section class="py-5 container">
+<section>
     <!--Report Title-->
-    <div class="row py-lg-5">
-        <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">@Model.options.section_title</h1>
+    @if(!String.IsNullOrWhiteSpace(Model.options.section_title))
+    {
+        <div style="width:100%;background-color:lightgray;padding:5px 15px">
+            <h1 style="font-family:Arial;font-size:large;margin-top:2px">@Model.options.section_title</h1>
         </div>
-    </div>
-    <hr />
+        <hr style="border:red" />
+    }
 
     @foreach(var itm in Model.components)
     {
         if (itm.type == "Card")
         {
             await Html.RenderPartialAsync("_card", itm.options);
+        }
+        if (itm.type == "Text")
+        {
+            await Html.RenderPartialAsync("_text", itm.options);
         }
     }
 

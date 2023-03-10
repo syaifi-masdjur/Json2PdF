@@ -1,0 +1,15 @@
+﻿@model Options
+
+@{
+    string operationA = Model.width;
+    var operationB = new System.Data.DataTable().Compute(operationA, "");
+    int w = Convert.ToInt16(Convert.ToDecimal(operationB) * 12M);
+}
+
+<div class="col-@w">
+  <div class="row g-0">
+    <div class="col-md-8">
+        @Model.text
+    </div>
+  </div>
+</div>
