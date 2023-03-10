@@ -1,0 +1,19 @@
+﻿@model Components
+<section class="py-5 container">
+    <!--Report Title-->
+    <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">@Model.options.section_title</h1>
+        </div>
+    </div>
+    <hr />
+
+    @foreach(var itm in Model.components)
+    {
+        if (itm.type == "Card")
+        {
+            await Html.RenderPartialAsync("_card", itm.options);
+        }
+    }
+
+</section>

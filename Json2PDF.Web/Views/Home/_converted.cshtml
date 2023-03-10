@@ -1,0 +1,11 @@
+﻿@model Root
+
+<!--Root-->
+@{
+	await Html.RenderPartialAsync("_title",Model.options);
+}
+
+<!--Component/Section-->
+@foreach(var itm in Model.components){
+	await Html.RenderPartialAsync("_sections", itm);
+}

@@ -1,6 +1,7 @@
 ﻿using Json2PDF.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace Json2PDF.Web.Controllers
 {
@@ -28,5 +29,13 @@ namespace Json2PDF.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public IActionResult Converted(Root data)
+        {
+            return PartialView("_converted",data); 
+        }
+
+
     }
 }
